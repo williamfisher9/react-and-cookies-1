@@ -1,6 +1,6 @@
-import { CookiesProvider, useCookies } from "react-cookie"
-import WelcomePage from "./WelcomePage"
-import LoginPage from "./LoginPage"
+import Home from "./Home"
+import Login from "./Login"
+import {useCookies, CookiesProvider} from 'react-cookie' 
 
 function App() {
   const [cookies, setCookie] = useCookies(['user'])
@@ -13,7 +13,7 @@ function App() {
     <CookiesProvider>
       <div>
         {
-          cookies.user ? <WelcomePage user={cookies.user} /> : <LoginPage onLogin={handleLogin} />
+          cookies.user ? <Home user={cookies.user} /> : <Login onLogin={handleLogin} />
         }
       </div>
     </CookiesProvider>
